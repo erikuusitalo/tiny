@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
@@ -6,7 +8,7 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-  return new Response('Tiny v0.1', {
+  return new Response(nanoid(), {
     headers: { 'content-type': 'text/plain' },
   })
 }
